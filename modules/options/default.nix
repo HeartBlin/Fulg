@@ -14,6 +14,8 @@
       boot = {  
         secureBoot = lib.mkEnableOption "Enable SecureBoot support";
       };
+
+      impermanence.enable = lib.mkEnableOption "Enable impermanence on '/'";
     };
   };
 }

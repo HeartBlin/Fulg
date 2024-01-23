@@ -8,6 +8,8 @@
       };
 
       users.userName = "heartblin";
+
+      impermanence.enable = true;
     };
   };
 }
