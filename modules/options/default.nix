@@ -4,18 +4,34 @@
 { lib, ... }:
 
 {
-  options = {
-    modules = {
-      users = {
-        # Set the username of the system
-        userName = lib.mkOption { type = lib.types.str; };
-      };
+  options.modules = {
+    device = {
+      # Set the CPU type of the system
+      cpu =
+        lib.mkOption { type = lib.types.str; };
 
-      boot = {  
-        secureBoot = lib.mkEnableOption "Enable SecureBoot support";
-      };
+      # Set the GPU type of the system
+      gpu =
+        lib.mkOption { type = lib.types.str; };
+    };
 
-      impermanence.enable = lib.mkEnableOption "Enable impermanence on '/'";
+    users = {
+      # Set the username of the system
+      userName = 
+        lib.mkOption { type = lib.types.str; };
+    };
+
+    boot = {  
+      secureBoot = 
+        lib.mkEnableOption "Enable SecureBoot support";
+    };
+
+    impermanence.enable = 
+      lib.mkEnableOption "Enable impermanence on '/'";
+
+    programs = {
+      wayland.hyprland.enable = 
+        lib.mkEnableOption "Enable the Hyprland compositor";
     };
   };
 }

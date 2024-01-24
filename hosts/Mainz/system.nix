@@ -7,8 +7,13 @@
         secureBoot = true;
       };
 
-      users.userName = "heartblin";
+      device = {
+        cpu = "amd";
+        gpu = "nvidia";
+      };
 
+      users.userName = "heartblin";
+      
       impermanence.enable = true;
     };
   };
