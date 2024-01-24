@@ -13,6 +13,8 @@
         gpu = "nvidia";
 
         audio.enable = true;
+        asus.enable = true;
+        bluetooth.enable = true;
       };
 
       programs = {

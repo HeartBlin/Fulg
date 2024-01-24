@@ -16,6 +16,12 @@
 
       audio.enable = 
         lib.mkEnableOption "Enable sound (pipewire)";
+
+      asus.enable = 
+        lib.mkEnableOption "Enable comp software for ASUS laptops";
+
+      bluetooth.enable = 
+        lib.mkEnableOption "Enable Bluetooth radio";
     };
 
     users = {
