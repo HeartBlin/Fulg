@@ -1,5 +1,5 @@
-{ config, inputs, lib, pkgs, ... }: let
-  user = config.modules.users;
+{ configHM, inputs, lib, pkgs, ... }: let
+  user = configHM.modules.users;
   wallpapers = {
     Win = "/home/${user.userName}/Pictures/Win11-light.jpg";
     HyprChan = "/home/${user.userName}/Pictures/HyprChan.png";
