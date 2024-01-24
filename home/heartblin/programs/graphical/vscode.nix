@@ -11,6 +11,9 @@
       # Use 'nil' as the Nix language server
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nil";
+
+      # Allow gpg signing
+      "git.enableCommitSigning" = true;
     };
 
     extensions = with pkgs.vscode-extensions; [
