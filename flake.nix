@@ -9,6 +9,13 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
+    # Firefox addons
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+
+    # Firefox GNOME Theme
+    firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme";
+    firefox-gnome-theme.flake = false;
+
     # wlroots based compositor 
     hyprland.url = "github:hyprwm/Hyprland";
 
