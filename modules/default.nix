@@ -5,6 +5,7 @@ _: {
     ./impermanence
     ./nix
     ./programs
+    ./security
     ./users
   ];
 }
