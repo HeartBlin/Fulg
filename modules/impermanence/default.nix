@@ -35,6 +35,7 @@ in {
         "/var/lib/nixos"
         "/var/lib/pipewire"
         "/var/lib/systemd/coredump"
+        "/var/lib/waydroid"
       ];
 
       files = [

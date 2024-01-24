@@ -9,6 +9,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
+    # wlroots based compositor 
+    hyprland.url = "github:hyprwm/Hyprland";
+
     # Manage '/home'
     homeManager.url = "github:nix-community/home-manager";
     homeManager.inputs.nixpkgs.follows = "nixpkgs";

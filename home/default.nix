@@ -1,18 +1,13 @@
-# Home manager
-# Nothing is imported in HM, only in NixOS
-# This allows me to not have split files 
-# ex. a Hyprland HM config file & a Hyprland NixOS module
+# Entry point of HM config
 
-{ inputs, ... }:
-
-{
-  imports = [
-    ./heartblin # Had to hardcode this in :(
-  ];
-
+{ config, inputs, ... }: let
+  user = config.modules.users;
+  configHM = config;
+in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs configHM; };
+    users.${user.userName} = import ./${user.userName};
   };
 }

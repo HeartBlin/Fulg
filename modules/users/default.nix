@@ -2,11 +2,11 @@
 # PS: Do not hardcode usernames
 
 { config, lib, ... }: let
-  cfg = config.modules.users;
+  user = config.modules.users;
 in {
   # Make the user 'heartblin'
-  config = lib.mkIf ( cfg.userName == "heartblin") {
-    users.users."${cfg.userName}" = {
+  config = lib.mkIf ( user.userName == "heartblin") {
+    users.users."${user.userName}" = {
       isNormalUser = true;
       initialPassword = "changeme";
       extraGroups = [ "wheel" "video" ];
