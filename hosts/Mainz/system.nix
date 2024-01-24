@@ -11,6 +11,8 @@
       device = {
         cpu = "amd";
         gpu = "nvidia";
+
+        audio.enable = true;
       };
 
       programs = {

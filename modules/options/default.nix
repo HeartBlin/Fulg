@@ -13,6 +13,9 @@
       # Set the GPU type of the system
       gpu =
         lib.mkOption { type = lib.types.str; };
+
+      audio.enable = 
+        lib.mkEnableOption "Enable sound (pipewire)";
     };
 
     users = {
