@@ -1,6 +1,7 @@
 _: {
   imports = [
     ./programs
+    ./themes
   ];
 
   programs.home-manager.enable = true;
