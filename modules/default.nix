@@ -1,6 +1,7 @@
 _: {
   imports = [
     ./boot
+    ./fonts
     ./hardware
     ./impermanence
     ./nix
