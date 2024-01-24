@@ -6,7 +6,7 @@
 
   # Needed for 'nh'
   environment = {
-    sessionVariables.FLAKE = "/home/${config.modules.users.userName}/dots";
+    sessionVariables.FLAKE = "/home/${config.modules.users.userName}/Documents/Fulg";
     systemPackages = [
       pkgs.git # Flakes need this
       inputs.nh.packages.${pkgs.system}.default
