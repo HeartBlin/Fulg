@@ -9,6 +9,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
+    # Manage '/home'
+    homeManager.url = "github:nix-community/home-manager";
+    homeManager.inputs.nixpkgs.follows = "nixpkgs";
+
     # Allow us to persist folders
     impermanence.url = "github:nix-community/impermanence";
 

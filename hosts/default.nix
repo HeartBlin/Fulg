@@ -4,9 +4,17 @@
   modules = ../modules;
   options = ../modules/options;
 
+  homePath = ../home;
+  homeManager = inputs.homeManager.nixosModules.home-manager;
+
   shared = [
     modules
     options
+  ];
+
+  home = [
+    homePath
+    homeManager
   ];
 in {
   # First machine, an AMD/NVIDIA laptop
@@ -18,7 +26,7 @@ in {
 
       # Machine-specific config starts in this folder
       ./Mainz
-    ] ++ builtins.concatLists [ shared ]; #TODO machine specific
+    ] ++ builtins.concatLists [ shared home ]; #TODO machine specific
 
     specialArgs = sharedArgs;
   };
