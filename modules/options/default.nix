@@ -22,9 +22,15 @@
     };
 
     boot = {  
-      secureBoot = 
+      plymouth.enable = 
+        lib.mkEnableOption "Enable graphical boot";
+        
+      secureBoot.enable = 
         lib.mkEnableOption "Enable SecureBoot support";
     };
+
+    encryption.enable = 
+      lib.mkEnableOption "Enable enc tweaks/Veracrypt";
 
     impermanence.enable = 
       lib.mkEnableOption "Enable impermanence on '/'";

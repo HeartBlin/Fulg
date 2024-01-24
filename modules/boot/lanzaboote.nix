@@ -1,5 +1,5 @@
 { config, inputs, lib, pkgs, ... }: let
-  cfg = config.modules.boot;
+  cfg = config.modules.boot.secureBoot;
 in {
   imports = [
     inputs.lanzaboote.nixosModules.lanzaboote
@@ -8,7 +8,7 @@ in {
   # Enable lanzaboote, aka enable SecureBoot
   # Will require additional steps
   # https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md
-  config = lib.mkIf cfg.secureBoot {
+  config = lib.mkIf cfg.enable {
     boot = {
       bootspec.enable = true;
 

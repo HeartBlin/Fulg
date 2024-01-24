@@ -4,7 +4,8 @@
   config = {
     modules = {
       boot = {
-        secureBoot = true;
+        secureBoot.enable = true;
+        plymouth.enable = true;
       };
 
       device = {
@@ -21,6 +22,7 @@
 
       users.userName = "heartblin";
       
+      encryption.enable = true;
       impermanence.enable = true;
     };
   };
