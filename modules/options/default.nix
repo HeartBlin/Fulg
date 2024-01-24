@@ -43,6 +43,9 @@
         lib.mkEnableOption "Enable Steam";
 
       virtualisation = {
+        distrobox.enable = 
+          lib.mkEnableOption "Enable Distrobox";
+          
         waydroid.enable = 
           lib.mkEnableOption "Enable Waydroid";
       };

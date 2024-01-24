@@ -18,6 +18,7 @@
         steam.enable = true;
 
         virtualisation = {
+          distrobox.enable = true;
           waydroid.enable = true;
         };
         
