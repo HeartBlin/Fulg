@@ -9,6 +9,12 @@ in {
       package = inputs.hyprland.packages.${pkgs.system}.default;
     };
 
+    # Display manager
+    services.xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+    };
+
     # Get Hyprland as a choice in display managers
     services.xserver.displayManager.sessionPackages = [
       inputs.hyprland.packages.x86_64-linux.default
