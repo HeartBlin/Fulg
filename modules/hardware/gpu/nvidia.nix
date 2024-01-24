@@ -27,11 +27,11 @@ in {
     ];
 
     hardware.nvidia = {
-      packages = nvidiaPackage;
+      package = nvidiaPackage;
       modesetting.enable = true;
       powerManagement.enable = true;
       powerManagement.finegrained = false;
-      dynamicBoost = true;
+      dynamicBoost.enable = true;
       open = false;
       nvidiaSettings = true;
       nvidiaPersistenced = true;
