@@ -14,6 +14,7 @@
 
       aliases = {
         c = "commit -m";
+        a = "add .";
       };
     };
 
