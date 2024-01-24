@@ -30,6 +30,12 @@
       lib.mkEnableOption "Enable impermanence on '/'";
 
     programs = {
+      gamemode.enable = 
+        lib.mkEnableOption "Enable Gamemode";
+
+      steam.enable = 
+        lib.mkEnableOption "Enable Steam";
+
       wayland.hyprland.enable = 
         lib.mkEnableOption "Enable the Hyprland compositor";
     };

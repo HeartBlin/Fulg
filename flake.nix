@@ -33,6 +33,9 @@
     # Nix helper
     nh.url = "github:viperML/nh";
     nh.inputs.nixpkgs.follows = "nixpkgs";
+
+    # GE-Proton
+    nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
   outputs = { nixpkgs, ... }@inputs: {

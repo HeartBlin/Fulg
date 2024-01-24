@@ -13,6 +13,9 @@
       };
 
       programs = {
+        gamemode.enable = true;
+        steam.enable = true;
+        
         wayland.hyprland.enable = true;
       };
 
