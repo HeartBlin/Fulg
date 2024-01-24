@@ -42,6 +42,11 @@
       steam.enable = 
         lib.mkEnableOption "Enable Steam";
 
+      virtualisation = {
+        waydroid.enable = 
+          lib.mkEnableOption "Enable Waydroid";
+      };
+
       wayland.hyprland.enable = 
         lib.mkEnableOption "Enable the Hyprland compositor";
     };

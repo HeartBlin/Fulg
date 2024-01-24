@@ -16,6 +16,10 @@
       programs = {
         gamemode.enable = true;
         steam.enable = true;
+
+        virtualisation = {
+          waydroid.enable = true;
+        };
         
         wayland.hyprland.enable = true;
       };
