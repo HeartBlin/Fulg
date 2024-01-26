@@ -20,6 +20,10 @@ in {
       inputs.hyprland.packages.x86_64-linux.default
     ];
 
+    # Auto-mount USB sticks
+    services.gvfs.enable = true;
+    services.udisks2.enable = true;
+
     # Gnome-keyring shenanigans
     security.polkit.enable = true;
     systemd.user.services.polkit-gnome = {

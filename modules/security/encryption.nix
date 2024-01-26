@@ -10,6 +10,11 @@ in {
         "usb_storage"
       ];
 
+      # I encrypt a USB stick, it is on NTFS
+      supportedFilesystems = [
+        "ntfs"
+      ];
+
       # No timeout
       kernelParams = [
         "luks.option=timeout=0"

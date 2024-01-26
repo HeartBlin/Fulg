@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
   # Allow unfree packages
@@ -22,6 +22,12 @@
   };
 
   nix = {
+    # Nix version
+    package = pkgs.nixVersions.unstable;
+
+    # Registry
+    registry.nixpkgs.flake = inputs.nixpkgs;
+
     # Make rebuilds a lower priority
     daemonCPUSchedPolicy = "batch";
     daemonIOSchedClass = "idle";
@@ -55,6 +61,9 @@
 
       # Stop telling me it is dirty IK
       warn-dirty = false;
+
+      # https://github.com/NixOS/nix/issues/9574
+      nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
 
       # Show me more logs
       log-lines = 40;
