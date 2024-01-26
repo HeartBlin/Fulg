@@ -10,7 +10,7 @@
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-esr;
+    package = pkgs.firefox;
     profiles.heartblin = {
       name = "HeartBlin";
       settings = {
