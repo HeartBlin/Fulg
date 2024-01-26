@@ -4,6 +4,7 @@ _: {
     ./fonts
     ./hardware
     ./impermanence
+    ./network
     ./nix
     ./programs
     ./security
