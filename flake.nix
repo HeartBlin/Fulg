@@ -8,6 +8,7 @@
     # I like unstable packages, switch to stable if you like
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # Firefox addons
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -39,7 +40,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
-  outputs = { nixpkgs, ... }@inputs: {
+  outputs = { nixpkgs, chaotic, ... }@inputs: {
     # Go to ./hosts/default.nix to see the rest
     nixosConfigurations = import ./hosts {
       inherit (nixpkgs) lib;
