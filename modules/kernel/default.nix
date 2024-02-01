@@ -5,7 +5,7 @@
     inputs.chaotic.nixosModules.default
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Tweaks
   security = {
