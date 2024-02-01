@@ -7,6 +7,7 @@
     userSettings = {
       "window.titleBarStyle" = "custom";
       "workbench.iconTheme" = "material-icon-theme";
+      "workbench.colorTheme" = "Visual Studio Dark";
 
       # Use 'nil' as the Nix language server
       "nix.enableLanguageServer" = true;
