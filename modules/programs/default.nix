@@ -4,5 +4,6 @@ _: {
     ./virtualisation
 
     ./hyprland.nix
+    ./jetbrains.nix
   ];
 }
