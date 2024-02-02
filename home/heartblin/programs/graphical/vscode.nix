@@ -7,7 +7,7 @@
     userSettings = {
       "window.titleBarStyle" = "custom";
       "workbench.iconTheme" = "material-icon-theme";
-      "workbench.colorTheme" = "Visual Studio Dark";
+      "workbench.colorTheme" = "Monokai Pro";
 
       "editor.fontFamily" = "'Cascadia Code', monospace";
       "editor.fontLigatures" = true;
@@ -36,7 +36,13 @@
       pkief.material-icon-theme
       eamodio.gitlens
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      # Add extensions here
+      # Monokai Pro Theme
+      {
+        name = "theme-monokai-pro-vscode";
+        publisher = "monokai";
+        version = "1.2.2";
+        sha256 = "sha256-xeLzzNgj/GmNnSmrwSfJW6i93++HO3MPAj8RwZzwzR4=";
+      }
     ];
   };
 

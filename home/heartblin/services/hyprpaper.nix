@@ -3,11 +3,13 @@
   wallpapers = {
     Win = "/home/${user.userName}/Pictures/Win11-light.jpg";
     HyprChan = "/home/${user.userName}/Pictures/HyprChan.png";
+    Test0 = "/home/${user.userName}/Downloads/k1ac1xpb31wy.png";
   };
 in{
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ${wallpapers.Win}
     preload = ${wallpapers.HyprChan}
+    preload = ${wallpapers.Test0}
 
     wallpaper =, ${wallpapers.Win}
   '';

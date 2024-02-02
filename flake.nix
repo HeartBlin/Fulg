@@ -10,6 +10,9 @@
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
+    # Aylur's GTK Shell
+    ags.url = "github:Aylur/ags";
+
     # Firefox addons
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 

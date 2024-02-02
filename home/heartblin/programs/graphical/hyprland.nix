@@ -8,6 +8,7 @@ in {
   home.packages = [
     hyprshot
     pkgs.swappy
+    pkgs.wl-color-picker
   ];
 
   wayland.windowManager.hyprland = {
