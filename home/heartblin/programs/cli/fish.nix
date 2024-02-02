@@ -13,7 +13,7 @@
       # Manage nix
       switch = "clear && nh os switch";
       boot = "clear && nh os switch";
-      up = "clear && nix flake update --flake ~/Documents/Fulg/ && clear && nh os switch";
+      up = "clear && nix flake update ~/Documents/Fulg/ && clear && nh os switch";
       garbage = "clear && nh clean all";
 
       # Go to dotfile folder
