@@ -4,11 +4,12 @@ in {
   services.pcscd.enable = true;
   environment.systemPackages = with pkgs; [
     pinentry-curses
+    pinentry-gnome
   ];
 
   programs.gnupg.agent = {
     enable = true;
-    pinentryFlavor = "curses";
+    pinentryFlavor = "gnome3";
     enableSSHSupport = true;
   };
 
