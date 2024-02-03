@@ -38,6 +38,9 @@ in {
 
         # In case services crash ffs
         "systemctl restart --user hyprpaper wl-clip-persist cliphist"
+
+        # Bar
+        "ags --config $HOME/Documents/Fulg/home/heartblin/programs/graphical/ags/config.js"
       ];
 
       general = {
@@ -66,8 +69,8 @@ in {
           special = false;
           new_optimizations = "on";
 
-          size = 7;
-          passes = 4;
+          size = 4;
+          passes = 3;
           brightness = 1;
           noise = 0.01;
           contrast = 1;
@@ -80,6 +83,9 @@ in {
         shadow_render_power = 6;
         "col.shadow" = "rgba(00000044)";
       };
+
+      # Blur for bar
+      blurls = "bar-0"; 
 
       animations = {
         enabled = true;
