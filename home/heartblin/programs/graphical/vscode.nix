@@ -7,7 +7,6 @@
     userSettings = {
       "window.titleBarStyle" = "custom";
       "workbench.iconTheme" = "material-icon-theme";
-      "workbench.colorTheme" = "Monokai Pro";
 
       "editor.fontFamily" = "'Cascadia Code', monospace";
       "editor.fontLigatures" = true;
@@ -24,7 +23,7 @@
 
       # General settings
       "editor.accessibilitySupport" = "off";
-      "explorer.compactFolders" = false;
+      "explorer.compactFolders" = true;
       "workbench.tree.renderIndentGuides" = "always";
       "editor.bracketPairColorization.enabled" = true;
       "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
