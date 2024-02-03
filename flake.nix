@@ -8,7 +8,7 @@
     # I like unstable packages, switch to stable if you like
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # Aylur's GTK Shell
     ags.url = "github:Aylur/ags";
@@ -43,7 +43,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
-  outputs = { nixpkgs, chaotic, ... }@inputs: {
+  outputs = { nixpkgs, /* chaotic, */ ... }@inputs: {
     # Go to ./hosts/default.nix to see the rest
     nixosConfigurations = import ./hosts {
       inherit (nixpkgs) lib;
