@@ -16,15 +16,12 @@
       settings = {
         # For GNOME Theme
         # "gnomeTheme.hideSingleTab" = true;
-        "gnomeTheme.bookmarksToolbarUnderTabs" = true;
-        "gnomeTheme.normalWidthTabs" = false;
-        "gnomeTheme.tabsAsHeaderbar" = false;
+        # "gnomeTheme.bookmarksToolbarUnderTabs" = true;
+        # "gnomeTheme.normalWidthTabs" = false;
+        # "gnomeTheme.tabsAsHeaderbar" = false;
 
-        "extensions.activThemeID" = "firefox-compact-dark@mozilla.org";
+        "browser.tabs.loadInBackground" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-        "browser.uidensity" = 0;
-        "browser.theme.dark-private-windows" = false;
-        "browser.tabs.drawInTitlebar" = true;
         "svg.context-properties.content.enabled" = true;
       };
 

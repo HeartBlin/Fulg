@@ -35,6 +35,9 @@ in {
         "/var/lib/nixos"
         "/var/lib/pipewire"
         "/var/lib/systemd/coredump"
+
+        # Flatpak
+        "/var/lib/flatpak"
       ];
 
       files = [
@@ -48,6 +51,9 @@ in {
           "Music"
           "Pictures"
           "Videos"
+
+          # Flatpak
+          ".local/share/flatpak" 
         ];
       };
     };

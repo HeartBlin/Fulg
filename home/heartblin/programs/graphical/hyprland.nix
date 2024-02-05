@@ -140,7 +140,6 @@ in {
         "$MOD, W, exec, ${pkgs.firefox}/bin/firefox"
         "$MOD SHIFT, W, exec, ${pkgs.microsoft-edge}/bin/microsoft-edge"
         "$MOD, RETURN, exec, ${pkgs.foot}/bin/foot"
-        "$MOD, SPACE, exec, ${pkgs.rofi}/bin/rofi -show drun"
         "$MOD, C, exec, ${pkgs.vscode}/bin/code"
         "CONTROL SHIFT, ESCAPE, exec, ${pkgs.mission-center}/bin/missioncenter"
 
@@ -199,6 +198,11 @@ in {
         ",XF86AudioPlay,exec,playerctl play-pause"
         ",XF86AudioPrev,exec,playerctl previous"
         ",XF86AudioNext,exec,playerctl next"
+      ];
+
+      bindr = [
+        # Lancher
+        "SUPER, SUPER_L, exec, pkill anyrun || anyrun"
       ];
 
       windowrulev2 = [

@@ -3,6 +3,7 @@ _: {
     ./gaming
     ./virtualisation
 
+    ./flatpak.nix
     ./hyprland.nix
     ./jetbrains.nix
   ];

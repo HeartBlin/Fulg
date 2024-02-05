@@ -13,12 +13,19 @@
     # Aylur's GTK Shell
     ags.url = "github:Aylur/ags";
 
+    # Anyrun
+    anyrun.url = "github:Kirottu/anyrun";
+    anyrun.inputs.nixpkgs.follows = "nixpkgs";
+
     # Firefox addons
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 
     # Firefox GNOME Theme
     firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme";
     firefox-gnome-theme.flake = false;
+
+    # Declarative Flatpaks
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.1.0";
 
     # wlroots based compositor && related
     hyprland.url = "github:hyprwm/Hyprland";
