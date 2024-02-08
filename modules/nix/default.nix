@@ -22,6 +22,9 @@
   };
 
   nix = {
+    # Only the whell group can invoke nix commands
+    allowedUsers = [ "@wheel" ];
+
     # Make rebuilds a lower priority
     daemonCPUSchedPolicy = "batch";
     daemonIOSchedClass = "idle";

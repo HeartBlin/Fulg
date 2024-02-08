@@ -3,4 +3,6 @@ _: {
     ./encryption.nix
     ./gpg.nix
   ];
+
+  security.sudo.execWheelOnly = true;
 }

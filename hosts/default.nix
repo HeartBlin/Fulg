@@ -24,6 +24,9 @@ in {
       # Set the hostname to match the nixosSystem name
       { networking.hostName = "Mainz"; }
 
+      # No default packages
+      { environment.defaultPackages = []; }
+
       # Machine-specific config starts in this folder
       ./Mainz
     ] ++ builtins.concatLists [ shared home ]; #TODO machine specific

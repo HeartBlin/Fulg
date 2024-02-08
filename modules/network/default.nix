@@ -25,6 +25,9 @@
       };
     };
 
+    # Firewall
+    firewall.enable = true;
+
     # DNS
     nameservers = [
       # Quad9
