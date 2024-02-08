@@ -45,6 +45,9 @@
       lib.mkEnableOption "Enable impermanence on '/'";
 
     programs = {
+      adb.enable = 
+        lib.mkEnableOption "Enable ADB + supporting software";
+
       gamemode.enable = 
         lib.mkEnableOption "Enable Gamemode";
 
@@ -54,6 +57,9 @@
       virtualisation = {
         distrobox.enable = 
           lib.mkEnableOption "Enable Distrobox";
+
+        macos.enable = 
+          lib.mkEnableOption "Enable a MacOS VM";
           
         waydroid.enable = 
           lib.mkEnableOption "Enable Waydroid";

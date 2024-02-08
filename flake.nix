@@ -48,6 +48,9 @@
 
     # GE-Proton
     nix-gaming.url = "github:fufexan/nix-gaming";
+
+    # MacOS VM
+    nixtheplanet.url = "github:matthewcroughan/nixtheplanet";
   };
 
   outputs = { nixpkgs, /* chaotic, */ ... }@inputs: {

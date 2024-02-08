@@ -15,8 +15,7 @@ in {
       displayManager.gdm.enable = true;
     };
 
-    # Wayland moment
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    services.upower.enable = true;
 
     # Get Hyprland as a choice in display managers
     services.xserver.displayManager.sessionPackages = [

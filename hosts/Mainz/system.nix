@@ -16,11 +16,13 @@
       };
 
       programs = {
+        adb.enable = true;
         gamemode.enable = true;
         steam.enable = true;
 
         virtualisation = {
           distrobox.enable = true;
+          macos.enable = false;
           waydroid.enable = true;
         };
         

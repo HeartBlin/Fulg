@@ -8,7 +8,7 @@
       "window.titleBarStyle" = "custom";
       "workbench.iconTheme" = "material-icon-theme";
 
-      "editor.fontFamily" = "'Cascadia Code', monospace";
+      "editor.fontFamily" = "'Segoe UI Fluent', 'Cascadia Code', monospace";
       "editor.fontLigatures" = true;
 
       # Use 'fish' as the shell

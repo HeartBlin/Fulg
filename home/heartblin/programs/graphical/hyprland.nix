@@ -69,8 +69,8 @@ in {
           special = false;
           new_optimizations = "on";
 
-          size = 4;
-          passes = 3;
+          size = 7;
+          passes = 4;
           brightness = 1;
           noise = 0.01;
           contrast = 1;
