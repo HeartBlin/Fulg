@@ -13,6 +13,7 @@
         audio.enable = true;
         asus.enable = true;
         bluetooth.enable = true;
+        dualboot.enable = true;
       };
 
       programs = {

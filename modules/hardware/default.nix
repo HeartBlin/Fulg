@@ -6,5 +6,6 @@ _: {
     ./audio.nix
     ./asus.nix
     ./bluetooth.nix
+    ./dualboot.nix
   ];
 }

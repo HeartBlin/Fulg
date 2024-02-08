@@ -22,6 +22,9 @@
 
       bluetooth.enable = 
         lib.mkEnableOption "Enable Bluetooth radio";
+
+      dualboot.enable = 
+        lib.mkEnableOption "Sync time correctly between Linux and Windows";
     };
 
     users = {
