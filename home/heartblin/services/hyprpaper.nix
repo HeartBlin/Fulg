@@ -3,15 +3,17 @@
   wallpapers = {
     Win = "/home/${user.userName}/Pictures/Win11-light.jpg";
     HyprChan = "/home/${user.userName}/Pictures/HyprChan.png";
-    Test0 = "/home/${user.userName}/Downloads/k1ac1xpb31wy.png";
+    HM-gruv = "/home/${user.userName}/Pictures/HM-gruv.jpg";
+    HM-oxocarbon = "/home/${user.userName}/Pictures/HM-oxocarbon.jpg";
   };
 in{
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ${wallpapers.Win}
     preload = ${wallpapers.HyprChan}
-    preload = ${wallpapers.Test0}
+    preload = ${wallpapers.HM-gruv}
+    preload = ${wallpapers.HM-oxocarbon}
 
-    wallpaper =, ${wallpapers.Win}
+    wallpaper =, ${wallpapers.HM-gruv}
   '';
 
   systemd.user.services.hyprpaper = {
