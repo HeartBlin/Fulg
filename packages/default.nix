@@ -2,7 +2,8 @@ _: {
   # Imports all my custom packages
   nixpkgs.overlays = [
     (final: prev: {
-      #
+      # Programs
+      proton-ge-custom = final.callPackage ./proton-ge-custom {};
 
       # Fonts
       monaspace = final.callPackage ./fonts/monaspace.nix {};
