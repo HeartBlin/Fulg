@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  home.packages = [
+    pkgs.cascadia-code
+    pkgs.nil
+    pkgs.statix
+  ];
+
   programs.vscode = {
     enable = true;
     enableUpdateCheck = false;
@@ -8,7 +14,7 @@
       "window.titleBarStyle" = "custom";
       "workbench.iconTheme" = "material-icon-theme";
 
-      "editor.fontFamily" = "'Segoe UI Fluent', 'Cascadia Code', monospace";
+      "editor.fontFamily" = "'Cascadia Code', monospace";
       "editor.fontLigatures" = true;
 
       # Use 'fish' as the shell
@@ -44,9 +50,4 @@
       }
     ];
   };
-
-  home.packages = [
-    pkgs.nil
-    pkgs.statix
-  ];
 }

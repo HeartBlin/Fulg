@@ -1,10 +1,10 @@
-{ lib, pkgs }:
+{ stdenvNoCC, fetchzip, lib }:
 
-pkgs.stdenvNoCC.mkDerivation rec {
+stdenvNoCC.mkDerivation rec {
   pname = "monaspace";
   version = "1.000";
 
-  src = pkgs.fetchzip {
+  src = fetchzip {
     url = "https://github.com/githubnext/${pname}/releases/download/v${version}/${pname}-v${version}.zip";
     hash = "sha256-H8NOS+pVkrY9DofuJhPR2OlzkF4fMdmP2zfDBfrk83A=";
     stripRoot=false;

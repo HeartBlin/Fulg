@@ -53,7 +53,7 @@
     nixtheplanet.url = "github:matthewcroughan/nixtheplanet";
   };
 
-  outputs = { nixpkgs, /* chaotic, */ ... }@inputs: {
+  outputs = { nixpkgs, ... }@inputs: {
     # Go to ./hosts/default.nix to see the rest
     nixosConfigurations = import ./hosts {
       inherit (nixpkgs) lib;

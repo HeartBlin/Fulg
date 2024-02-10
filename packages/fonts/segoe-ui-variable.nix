@@ -1,18 +1,20 @@
-{ lib, pkgs }:
+{ stdenvNoCC, fetchzip, lib }:
 
-pkgs.stdenv.mkDerivation {
+stdenvNoCC.mkDerivation {
   pname = "SegoeUI-VF";
   version = "1";
 
-  src = pkgs.fetchzip {
+  src = fetchzip {
     url = "https://download.microsoft.com/download/f/5/9/f5908651-3551-4a00-b8a0-1b46b5feb723/SegoeUI-VF.zip";
     hash = "sha256-s82pbi3DQzcV9uP1bySzp9yKyPGkmJ9/m1Q6FRFfGxg=";
     stripRoot = false;
   };
 
   installPhase = ''
+    runHook preInstall
     mkdir -p $out/share/fonts/segoeUI
     cp -R $src $out/share/fonts/segoeUI
+    runHook postInstall
   '';
 
   meta = {

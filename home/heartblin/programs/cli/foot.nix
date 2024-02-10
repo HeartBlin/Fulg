@@ -1,4 +1,10 @@
-_: {
+{ pkgs, ... }: 
+
+{
+  home.packages = [
+    pkgs.monaspace
+  ];
+
   programs.foot = {
     enable = true;
     settings = {
