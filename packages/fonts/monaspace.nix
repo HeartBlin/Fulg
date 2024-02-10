@@ -1,6 +1,6 @@
 { lib, pkgs }:
 
-pkgs.stdenv.mkDerivation rec {
+pkgs.stdenvNoCC.mkDerivation rec {
   pname = "monaspace";
   version = "1.000";
 
@@ -11,8 +11,10 @@ pkgs.stdenv.mkDerivation rec {
   };
 
   installPhase = ''
+    runHook preInstall
     mkdir -p $out/share/fonts/monaspace
     cp -R $src $out/share/fonts/monaspace
+    runHook postInstall
   '';
 
   meta = {

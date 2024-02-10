@@ -3,6 +3,7 @@
 
   modules = ../modules;
   options = ../modules/options;
+  packages = ../packages;
 
   homePath = ../home;
   homeManager = inputs.homeManager.nixosModules.home-manager;
@@ -10,6 +11,7 @@
   shared = [
     modules
     options
+    packages
   ];
 
   home = [
