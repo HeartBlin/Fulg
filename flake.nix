@@ -51,6 +51,10 @@
 
     # MacOS VM
     nixtheplanet.url = "github:matthewcroughan/nixtheplanet";
+
+    # NixVim
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, ... }@inputs: {

@@ -33,6 +33,9 @@ in {
         # Nautilus
         ./nautilus
 
+        # Neovim
+        ./neovim
+
         # OnlyOffice
         ./onlyoffice
 

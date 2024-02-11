@@ -43,7 +43,12 @@
 
       shell = {
         name = "fish";
-        starship = true;
+        starship.enable = true;
+      };
+
+      editors = {
+        vscode.enable = true;
+        neovim.enable = true;
       };
     };
   };

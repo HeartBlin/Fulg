@@ -1,7 +1,7 @@
 { configHM, lib, ... }: let 
-  cfg = configHM.home;
+  cfg = configHM.home.shell.starship;
 in {
-  config = lib.mkIf ( cfg.shell.starship == true ) {
+  config = lib.mkIf cfg.enable {
     programs.starship = {
       enable = true;
       enableFishIntegration = true;
