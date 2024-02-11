@@ -15,7 +15,23 @@
       "workbench.iconTheme" = "material-icon-theme";
 
       "editor.fontFamily" = "'Cascadia Code', monospace";
-      "editor.fontLigatures" = true;
+      "editor.tokenColorCustomizations" = {
+        "textMateRules" = [
+          {
+            "scope" = [
+              "comment"
+              "entity.name.type.class"
+              "keyword"
+              "constant"
+              "storage.type"
+              "variable.language.this.cpp"
+            ];
+            "settings" = {
+              "fontStyle" = "bold";
+            };
+          }
+        ];
+      };
 
       # Use 'fish' as the shell
       "terminal.integrated.defaultProfile.linux" = "fish";

@@ -138,7 +138,7 @@ in {
 
         # Programs
         "$MOD, W, exec, ${pkgs.firefox}/bin/firefox"
-        "$MOD SHIFT, W, exec, ${pkgs.microsoft-edge}/bin/microsoft-edge"
+        "$MOD SHIFT, W, exec, ${pkgs.microsoft-edge-dev}/bin/microsoft-edge-dev"
         "$MOD, RETURN, exec, ${pkgs.foot}/bin/foot"
         "$MOD, C, exec, ${pkgs.vscode}/bin/code"
         "CONTROL SHIFT, ESCAPE, exec, ${pkgs.mission-center}/bin/missioncenter"
