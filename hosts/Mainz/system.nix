@@ -1,5 +1,6 @@
 {
   config = {
+    # NixOS Modules
     modules = {
       boot = {
         secureBoot.enable = true;
@@ -34,6 +35,16 @@
       
       encryption.enable = true;
       impermanence.enable = true;
+    };
+
+    # Home Manager Modules
+    home = {
+      terminal = "foot";
+
+      shell = {
+        name = "fish";
+        starship = true;
+      };
     };
   };
 }

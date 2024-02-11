@@ -1,6 +1,6 @@
 _: {
   imports = [
-    ./clipboard.nix
+    ./hyprland.nix
     ./hyprpaper.nix
   ];
 }

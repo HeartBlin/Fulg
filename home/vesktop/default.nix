@@ -17,6 +17,4 @@
     Type=Application
     Version=1.4
   '';
-
-
 }
