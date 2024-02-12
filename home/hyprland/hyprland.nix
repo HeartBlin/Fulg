@@ -9,6 +9,7 @@ in {
     hyprshot
     pkgs.swappy
     pkgs.wl-color-picker
+    pkgs.swayosd
   ];
 
   wayland.windowManager.hyprland = {
@@ -40,7 +41,10 @@ in {
         "systemctl restart --user hyprpaper wl-clip-persist cliphist"
 
         # Bar
-        "ags --config $HOME/Documents/Fulg/home/heartblin/programs/graphical/ags/config.js"
+        "ags --config $HOME/Documents/Fulg/home/ags/data/config.js"
+
+        # OSD
+        "swayosd-server"
       ];
 
       general = {
@@ -182,13 +186,13 @@ in {
 
       binde = [
         # volume controls
-        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume=raise"
+        ",XF86AudioLowerVolume, exec,  swayosd-client --output-volume=lower"
+        ",XF86AudioMute, exec, swayosd-client --output-volume=mute-toggle"
 
         # brightness controls
-        ",XF86MonBrightnessUp, exec, brillo -q -u 300000 -A 5"
-        ",XF86MonBrightnessDown, exec, brillo -q -u 300000 -U 5"
+        ",XF86MonBrightnessUp, exec, swayosd-client --brightness=raise"
+        ",XF86MonBrightnessDown, exec, swayosd-client --brightness=lower"
         ",XF86KbdBrightnessUp, exec, asusctl -n"
         ",XF86KbdBrightnessDown, exec, asusctl -p"
       ];

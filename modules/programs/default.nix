@@ -7,5 +7,6 @@ _: {
     ./flatpak.nix
     ./hyprland.nix
     ./jetbrains.nix
+    ./transmission.nix
   ];
 }

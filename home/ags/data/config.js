@@ -1,7 +1,9 @@
 import { exec, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-import Mpris from 'resource:///com/github/Aylur/ags/service/mpris.js';
+import Audio from 'resource:///com/github/Aylur/ags/service/audio.js';
+
+// TODO Fan speed selector with this icons    (low to high)
 
 // PFP
 const username = Utils.exec('whoami');
@@ -35,9 +37,9 @@ const BatteryLabel = () => Widget.Label({
                 [50, ''],
                 [40, ''],
                 [30, ''],
-                [20, ''],
+                [20, ''],
                 [10, ''],
-                [0, ''],
+                [0, ''],
             ].find(([threshold]) => threshold <= value)?.[1];
 
             const labelcharging = [
@@ -57,31 +59,36 @@ const BatteryLabel = () => Widget.Label({
             if (exec('cat /sys/class/power_supply/ADP0/online') == 1) {
                 self.label = `${labelcharging}`;
                 self.tooltip_text = `Battery status: ${value}% available (plugged in)`;
-            }
-            else {
+            } else {
                 self.label = `${label}`;
                 self.tooltip_text = `Battery status: ${value}% available`;
-            }
+            };
         })
 });
 
-// Volume
-const Volume = () => Widget.Icon({
+const Volume = () => Widget.Box({
     class_name: 'volume',
-    setup: self => self
-        .poll(1000, self => {
-            var value = Utils.exec( App.configDir + '/script/getVolume.sh');
-            const icon = [
-                [100, '100'],
-                [66, '66'],
-                [33, '33'],
-                [0, '00'],
-                [-1, 'mute'],
-            ].find(([threshold]) => threshold <= value)?.[1];
+    children: [
+        Widget.Label().hook(Audio, self => {
+            if (!Audio.speaker)
+                return;
 
-            self.icon = App.configDir + `/icons/volume/${icon}.svg`;
-            self.size = 24;
-        })
+            const category = {
+                900000: '',
+                100: '',
+                67: '',
+                33: '',
+                1: '',
+                0: '',
+            };
+
+            const icon = Audio.speaker.stream.isMuted ? 900000 : [100, 67, 33, 1, 0].find(
+                threshold => threshold <= Audio.speaker.volume * 100
+            );
+
+            self.label = `${category[icon]}`;
+        }, 'speaker-changed'),
+    ],
 });
 
 // Modules in the right section of the bar
@@ -108,8 +115,6 @@ const Left = () => Widget.Box({
 
     ],
 });
-
-
 
 // The bar
 const Bar = ( monitor = 0 ) => Widget.Window({

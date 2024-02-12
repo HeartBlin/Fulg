@@ -54,6 +54,9 @@
       gamemode.enable = 
         lib.mkEnableOption "Enable Gamemode";
 
+      transmission.enable = 
+        lib.mkEnableOption "Enable the Transmission torrent client, use for Linux ISOs only :)";
+
       steam.enable = 
         lib.mkEnableOption "Enable Steam";
 

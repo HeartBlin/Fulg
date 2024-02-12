@@ -6,17 +6,23 @@ window.taskbar {
 
 .clock {
     /* top right bottom left*/
-    padding: 13px 15px 13px 0px;
+    padding: 13px 15px 12px 0px;
     font-family: 'Segoe UI Variable Regular';
     font-size: 11pt;
     font-weight: 500;
 }
 
 .battery {
-    padding: 0px 24px 0px 0px;
+    padding: 0px 20px 0px 0px;
     margin: 1px 0px 0px 0px;
     font-family: 'Segoe Fluent Icons';
     font-size: 17pt;
+}
+
+.volume {
+    margin: 0px -8px 0px 0px;
+    font-family: 'Segoe Fluent Icons';
+    font-size: 16pt;
 }
 
 tooltip {
@@ -33,10 +39,10 @@ tooltip {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 2px solid rgba(64, 64, 64, 0.9);
-    box-shadow: 0 0 2px #FFFFFF;
+    border: 2px solid rgba(64, 64, 64, 0.5);
+    box-shadow: 0 0 1px black inset, 0 0 1px 0 black;
     border-radius: 420px;
-    padding: 0px 19px 0px 20px;
+    padding: 0px 2.7em 0px 0em;
     margin: 11px 15px 10px 0px;
 }
 

@@ -21,6 +21,7 @@
         adb.enable = true;
         gamemode.enable = true;
         steam.enable = true;
+        transmission.enable = true;
 
         virtualisation = {
           distrobox.enable = true;
