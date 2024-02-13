@@ -11,11 +11,6 @@
         key = "0xE7915D7BAA8DEFCB";
         signByDefault = true;
       };
-
-      aliases = {
-        c = "commit -m";
-        a = "add .";
-      };
     };
 
     gh = {
