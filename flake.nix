@@ -7,7 +7,7 @@
   inputs = {
     # I like unstable packages, switch to stable if you like
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    #nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    #stable.url = "github:nixos/nixpkgs/nixos-23.11";
     #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # Aylur's GTK Shell

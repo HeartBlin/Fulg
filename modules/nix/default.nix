@@ -22,9 +22,6 @@
   };
 
   nix = {
-    # Only the whell group can invoke nix commands
-    allowedUsers = [ "@wheel" ];
-
     # Make rebuilds a lower priority
     daemonCPUSchedPolicy = "batch";
     daemonIOSchedClass = "idle";
@@ -48,6 +45,9 @@
     nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
 
     settings = {
+      # Only the whell group can invoke nix commands
+      allowed-users = [ "@wheel" ];
+
       # Enable flakes
       experimental-features = [ "nix-command" "flakes" "cgroups" ];
 
