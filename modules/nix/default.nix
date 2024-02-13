@@ -1,8 +1,11 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # 'command-not-found' does not work anyway, use nix-index
+  programs.command-not-found.enable = false;
 
   # Needed for 'nh'
   environment = {
@@ -10,6 +13,7 @@
     systemPackages = [
       pkgs.git # Flakes need this
       inputs.nh.packages.${pkgs.system}.default
+      inputs.nix-index.packages.${pkgs.system}.default
     ];
   };
 
@@ -41,8 +45,8 @@
     };
 
     # Registry
-    registry = lib.mapAttrs (_: v: { flake = v; }) inputs;
-    nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
+    #registry = lib.mapAttrs (_: v: { flake = v; }) inputs;
+    #nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
 
     settings = {
       # Only the whell group can invoke nix commands
@@ -56,9 +60,6 @@
 
       # Build inside cgroups
       use-cgroups = true;
-
-      # Registry again
-      flake-registry = "/etc/nix/registry.json";
 
       # Build in sandbox
       sandbox = true;

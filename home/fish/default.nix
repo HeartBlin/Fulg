@@ -1,5 +1,9 @@
 { configHM, lib, pkgs, ... }: let
   cfg = configHM.home;
+  command-not-found = pkgs.writeShellScriptBin "command-not-found" ''
+    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+    command_not_found_handle "$@"
+  '';
 in {
   config = lib.mkIf ( cfg.shell.name == "fish" ) {
     programs.fish = {
@@ -43,6 +47,13 @@ in {
 
         # systemd
         errors = "journalctl -p 3 -xb";
+      };
+
+      functions = {
+        __fish_command_not_found_handler = {
+          body = "${command-not-found}/bin/command-not-found $argv";
+          onEvent = "fish_command_not_found";
+        };
       };
     };
 

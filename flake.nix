@@ -49,6 +49,9 @@
     # GE-Proton
     nix-gaming.url = "github:fufexan/nix-gaming";
 
+    # 'command-not-found' replacement
+    nix-index.url = "github:nix-community/nix-index";
+
     # MacOS VM
     nixtheplanet.url = "github:matthewcroughan/nixtheplanet";
 
