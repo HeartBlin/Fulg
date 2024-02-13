@@ -1,3 +1,6 @@
+### Most 'userSettings' are from rxyhn on GitHub ###
+### https://github.com/rxyhn/yuki/tree/main/home/modules/programs/vscode ###
+
 { configHM, lib, pkgs, ... }: let
   cfg = configHM.home.editors.vscode;
 in {
@@ -6,66 +9,103 @@ in {
       enable = true;
       enableUpdateCheck = false;
       userSettings = {
-        "window.titleBarStyle" = "custom";
-        "workbench.iconTheme" = "material-icon-theme";
+        # Disable autoUpdates
+        "extensions.autoCheckUpdates" = false;
+        "extensions.ignoreRecommendations" = true;
+        "update.mode" = "none";
 
-        "editor.fontFamily" = "'Cascadia Code', monospace";
-        "editor.tokenColorCustomizations" = {
-          "textMateRules" = [
-            {
-              "scope" = [
-                "comment"
-                "entity.name.type.class"
-                "keyword"
-                "constant"
-                "storage.type"
-                "variable.language.this.cpp"
-              ];
-              "settings" = {
-                "fontStyle" = "bold";
-              };
-            }
-          ];
-        };
-
-        # Use 'fish' as the shell
-        "terminal.integrated.defaultProfile.linux" = "fish";
-
-        # Use 'nil' as the Nix language server
-        "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nil";
-
-        # Allow gpg signing
-        "git.enableCommitSigning" = true;
-
-        # General settings
-        "editor.accessibilitySupport" = "off";
-        "explorer.compactFolders" = true;
-        "workbench.tree.renderIndentGuides" = "always";
+        # Editor
         "editor.bracketPairColorization.enabled" = true;
         "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
+        "editor.cursorBlinking" = "smooth";
+        "editor.cursorSmoothCaretAnimation" = "on";
+        "editor.cursorStyle" = "line";
+        "editor.cursorSurroundingLines" = 15;
+        "editor.fontFamily" = "'Cascadia Code', monospace";
+        "editor.fontLigatures" = true;
+        "editor.fontSize" = 15;
+        "editor.fontWeight" = 500;
+        "editor.guides.bracketPairs" = true;
+        "editor.guides.indentation" = true;
+        "editor.inlineSuggest.enabled" = true;
+        "editor.minimap.enabled" = false;
+        "editor.renderLineHighlight" = "all";
+        "editor.semanticHighlighting.enabled" = true;
+        "editor.showUnused" = true;
+        "editor.smoothScrolling" = true;
+        "editor.trimAutoWhitespace" = true;
+
+        # Explorer
+        "explorer.confirmDelete" = false;
+        "explorer.confirmDragAndDrop" = false;
+
+        # Files
+        "files.insertFinalNewline" = true;
+        "files.trimTrailingWhitespace" = true;
+
+        # Terminal
+        "terminal.integrated.defaultProfile.linux" = "fish";
+        "terminal.integrated.smoothScrolling" = true;
+
+        # Window
+        "window.autoDetectColorScheme" = true;
+        "window.dialogStyle" = "custom";
+        "window.menuBarVisibility" = "toggle";
+        "window.titleBarStyle" = "custom";
+
+        # Workbench
+        "workbench.iconTheme" = "material-icon-theme";
+        "workbench.panel.defaultLocation" = "right";
+        "workbench.sideBar.location" = "right";
+
+        ## Extensions
+        "git.autofetch" = true;
+        "git.enableCommitSigning" = true;
+        "git.enableSmartCommit" = true;
+
+        "path-intellisense.autoSlashAfterDirectory" = true;
+        "path-intellisense.autoTriggerNextSuggestion" = true;
+        "path-intellisense.extensionOnImport" = true;
+        "path-intellisense.showHiddenFiles" = true;
+
+        ## Language Specific
+        formatter = {
+          "[java]"."editor.defaultFormatter" = "redhat.java";
+          "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
+        };
+
+        # Java
+        "java.configuration.runtimes" = [
+          {
+            name = "JavaSE-17";
+            path = "${pkgs.jdk17}/lib/openjdk";
+            default = true;
+          }
+        ];
+        "java.format.settings.profile" = "GoogleStyle";
+        "java.jdt.ls.java.home" = "${pkgs.jdk17}/lib/openjdk";
+
+        # Nix
+        "nix.enableLanguageServer" = true;
+        "nix.formatterPath" = "${pkgs.alejandra}/bin/alejandra";
+        "nix.serverPath" = "${pkgs.nil}/bin/nil";
+        "nix.serverSettings"."nil"."formatting"."command" = [ "${pkgs.alejandra}/bin/alejandra" ];
       };
 
-      extensions = with pkgs.vscode-extensions; [
+      mutableExtensionsDir = false;
+      extensions = (with pkgs.vscode-extensions; [
+        christian-kohler.path-intellisense
+        redhat.java
         jnoortheen.nix-ide
         ms-vscode.cpptools
         pkief.material-icon-theme
-        eamodio.gitlens
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        # Monokai Pro Theme
-        {
-          name = "theme-monokai-pro-vscode";
-          publisher = "monokai";
-          version = "1.2.2";
-          sha256 = "sha256-xeLzzNgj/GmNnSmrwSfJW6i93++HO3MPAj8RwZzwzR4=";
-        }
-      ];
+      ]);
     };
+
+    xdg.mimeApps.defaultApplications."text/plain" = "code.desktop";
 
     home.packages = [
       pkgs.cascadia-code
-      pkgs.nil
-      pkgs.statix
     ];
   };
 }

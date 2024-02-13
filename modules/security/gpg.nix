@@ -3,7 +3,7 @@
 in {
   services.pcscd.enable = true;
   environment.systemPackages = with pkgs; [
-    pinentry-curses
+    # pinentry-curses
     pinentry-gnome
   ];
 
@@ -20,7 +20,7 @@ in {
       enable = true;
       enableSshSupport = true;
       enableExtraSocket = true;
-      pinentryFlavor = "curses";
+      pinentryFlavor = "gnome3";
     };
   };
 }
