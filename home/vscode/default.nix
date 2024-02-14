@@ -69,11 +69,6 @@ in {
         "path-intellisense.showHiddenFiles" = true;
 
         ## Language Specific
-        formatter = {
-          "[java]"."editor.defaultFormatter" = "redhat.java";
-          "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
-        };
-
         # Java
         "java.configuration.runtimes" = [
           {
