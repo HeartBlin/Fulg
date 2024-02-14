@@ -15,7 +15,6 @@
         audio.enable = false;
         asus.enable = false;
         bluetooth.enable = false;
-        dualboot.enable = false;
       };
 
       programs = {

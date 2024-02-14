@@ -14,7 +14,6 @@
         audio.enable = true;
         asus.enable = true;
         bluetooth.enable = true;
-        dualboot.enable = true;
       };
 
       programs = {
@@ -28,12 +27,12 @@
           macos.enable = false;
           waydroid.enable = true;
         };
-        
+
         wayland.hyprland.enable = true;
       };
 
       users.userName = "heartblin";
-      
+
       encryption.enable = true;
       impermanence.enable = true;
     };

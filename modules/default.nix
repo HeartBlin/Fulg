@@ -4,6 +4,7 @@ _: {
     ./hardware
     ./impermanence
     ./kernel
+    ./locale
     ./network
     ./nix
     ./programs
