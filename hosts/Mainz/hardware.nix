@@ -8,7 +8,7 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod" ];
   boot.kernelModules = [ "kvm-amd" ];
 
-  fileSystems."/" = { 
+  fileSystems."/" = {
     device = "/dev/disk/by-uuid/e54b8058-f6a0-4534-be84-af6804ae4f10";
     fsType = "btrfs";
     options = [ "subvol=root" "compress=zstd" "noatime" ];

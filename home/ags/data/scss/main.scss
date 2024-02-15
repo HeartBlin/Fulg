@@ -1,0 +1,17 @@
+* {
+    /* No built in style is my CSS, no sir */
+    all: unset;
+}
+
+window.taskbar {
+    background-color: rgba(25, 25, 25, 0.85);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(64, 64, 64, 1);
+}
+
+@import "profile-picture";
+@import "clock";
+@import "battery";
+@import "volume";
+@import "network";
+@import "action-button";

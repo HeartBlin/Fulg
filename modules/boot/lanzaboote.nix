@@ -19,11 +19,12 @@ in {
 
       # We don't need the normal systemd-boot anymore
       loader.systemd-boot.enable = lib.mkForce false;
+      loader.timeout = 0;
     };
 
     environment.systemPackages = [
       # Useful to avoid doing 'nix shell nixpkgs#sbctl' everytime
-      pkgs.sbctl 
+      pkgs.sbctl
     ];
   };
 }

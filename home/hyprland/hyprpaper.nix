@@ -5,6 +5,7 @@
     HyprChan = "/home/${user.userName}/Pictures/HyprChan.png";
     HM-gruv = "/home/${user.userName}/Pictures/HM-gruv.jpg";
     HM-oxocarbon = "/home/${user.userName}/Pictures/HM-oxocarbon.jpg";
+    String = "/home/${user.userName}/Pictures/silly-string.jpg";
   };
 in{
   xdg.configFile."hypr/hyprpaper.conf".text = ''
@@ -12,8 +13,9 @@ in{
     preload = ${wallpapers.HyprChan}
     preload = ${wallpapers.HM-gruv}
     preload = ${wallpapers.HM-oxocarbon}
+    preload = ${wallpapers.String}
 
-    wallpaper =, ${wallpapers.HM-gruv}
+    wallpaper =, ${wallpapers.String}
   '';
 
   systemd.user.services.hyprpaper = {
