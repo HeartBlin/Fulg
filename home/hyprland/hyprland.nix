@@ -41,7 +41,7 @@ in {
         "systemctl restart --user hyprpaper wl-clip-persist cliphist"
 
         # Bar
-        "ags --config $HOME/Documents/Fulg/home/ags/data/config.js"
+        "ags"
 
         # OSD
         "swayosd-server"
@@ -89,7 +89,7 @@ in {
       };
 
       # Blur for bar
-      blurls = "bar-0"; 
+      blurls = "bar-0";
 
       animations = {
         enabled = true;
