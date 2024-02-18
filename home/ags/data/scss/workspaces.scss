@@ -1,0 +1,26 @@
+.workspaces {
+    margin: 6px 0px 5px 15px;
+    font-size: 20px;
+}
+
+.workspaces button {
+    background-color: transparent;
+    border-radius: 7px;
+    border-top: 1px solid transparent;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 5px 0px 5px;
+
+    transition: background-color 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.workspaces button:hover {
+    background-color: rgba(100, 100, 100, 0.25);
+    border-top: 1px solid rgba(64, 64, 64, 0.5);
+}
+
+.workspaces button.focused {
+    background-color: red;
+    background-color: rgba(100, 100, 100, 0.25);
+    border-top: 1px solid rgba(64, 64, 64, 0.5);
+}

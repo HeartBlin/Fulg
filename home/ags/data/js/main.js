@@ -3,6 +3,7 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import Pfp from './pfp.js';
 import Clock from './clock.js';
 import Menu from './menu/index.js';
+import Workspaces from './workspaces.js'
 
 // Modules in the right section of the bar
 const Right = () => Widget.Box({
@@ -24,7 +25,7 @@ const Center = () => Widget.Box({
 // Modules in the left section of the bar
 const Left = () => Widget.Box({
     children: [
-
+        //Workspaces(),
     ],
 });
 

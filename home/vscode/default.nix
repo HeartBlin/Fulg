@@ -94,7 +94,14 @@ in {
         jnoortheen.nix-ide
         ms-vscode.cpptools
         pkief.material-icon-theme
-      ]);
+      ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "language-x86-64-assembly";
+          publisher = "13xforever";
+          version = "3.1.4";
+          sha256 = "sha256-FJRDm1H3GLBfSKBSFgVspCjByy9m+j9OStlU+/pMfs8=";
+        }
+      ];
     };
 
     xdg.mimeApps.defaultApplications."text/plain" = "code.desktop";

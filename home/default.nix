@@ -58,6 +58,9 @@ in {
 
         # Version Control
         ./git
+
+        # OpenSSH
+        ./ssh
       ];
 
       programs.home-manager.enable = true;
