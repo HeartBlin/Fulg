@@ -1,5 +1,5 @@
 {
   imports = [
-    ./workstation
+    ./nvidia.nix
   ];
 }

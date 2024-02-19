@@ -5,10 +5,8 @@
   '';
 
   inputs = {
-    # I like unstable packages, switch to stable if you like
+    # I use unstable for all use-cases
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    #stable.url = "github:nixos/nixpkgs/nixos-23.11";
-    #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     # Aylur's GTK Shell
     ags.url = "github:Aylur/ags";
@@ -23,9 +21,6 @@
     # Firefox GNOME Theme
     firefox-gnome-theme.url = "github:rafaelmardojai/firefox-gnome-theme";
     firefox-gnome-theme.flake = false;
-
-    # Declarative Flatpaks
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.1.0";
 
     # wlroots based compositor && related
     hyprland.url = "github:hyprwm/Hyprland";
@@ -46,21 +41,11 @@
     nh.url = "github:viperML/nh";
     nh.inputs.nixpkgs.follows = "nixpkgs";
 
-    # GE-Proton
+    # Used to get LL on pipewire
     nix-gaming.url = "github:fufexan/nix-gaming";
 
     # 'command-not-found' replacement
     nix-index.url = "github:nix-community/nix-index";
-
-    # MacOS VM
-    nixtheplanet.url = "github:matthewcroughan/nixtheplanet";
-
-    # NixVim
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Nix VSCode Extensions
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = { nixpkgs, ... }@inputs: {
