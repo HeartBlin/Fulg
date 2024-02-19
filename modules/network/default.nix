@@ -4,6 +4,10 @@
 { lib, ... }:
 
 {
+  imports = [
+    ./tailscale.nix
+  ];
+
   networking = {
     # Please keep my WiFi card name the same ffs
     usePredictableInterfaceNames = true;
@@ -39,7 +43,7 @@
       # Cloudflare
       #"1.1.1.1"
       #"1.0.0.1"
-      #"2606:4700:4700::1111" 
+      #"2606:4700:4700::1111"
       #"2606:4700:4700::1001"
     ];
   };
@@ -47,7 +51,7 @@
   # Set up systemd-resolved
   services.resolved = {
     enable = true;
-    fallbackDns = [ "9.9.9.9" ]; 
+    fallbackDns = [ "9.9.9.9" ];
     dnssec = "false"; # MITM lmao
     domains = [ "~." ];
     extraConfig = "DNSOverTLS=yes";
