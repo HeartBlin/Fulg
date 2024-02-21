@@ -14,6 +14,10 @@ in {
       }
     ];
 
+    environment.systemPackages = [
+      pkgs.gamescope
+    ];
+
     # Allow games to request optimizations
     programs.gamemode = {
       enable = true;

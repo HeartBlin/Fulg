@@ -25,6 +25,8 @@
     # wlroots based compositor && related
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
+    hypridle.url = "github:hyprwm/hypridle";
+    hyprlock.url = "github:hyprwm/hyprlock";
 
     # Manage '/home'
     homeManager.url = "github:nix-community/home-manager";

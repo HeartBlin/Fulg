@@ -1,14 +1,20 @@
-# Add users or change user name through the system
-# PS: Do not hardcode usernames
-
 { config, lib, ... }: let
-  user = config.user;
+  role = config.role;
 in {
   # Make the user 'heartblin'
-  config = lib.mkIf ( user.userName == "heartblin") {
-    users.users."${user.userName}" = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "video" ];
-    };
+  users.users."heartblin" = lib.mkIf ( role == "workstation") {
+    isNormalUser = true;
+    description = "HeartBlin";
+    extraGroups = [ "wheel" "video" ];
+  };
+
+  # Make the user for the server
+  users.users."server" = lib.mkIf ( role == "server") {
+    isNormalUser = true;
+    description = "Server";
+    extraGroups = [ "networkmanager" "wheel" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJR590NCThXFKZ1dnVUgMmndhUecJwHqqti5mVoZ8X2p heartblin@Mainz"
+    ];
   };
 }

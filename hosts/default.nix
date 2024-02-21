@@ -35,4 +35,17 @@ in {
 
     specialArgs = sharedArgs;
   };
+
+  # Shitty server with an i3-2100
+  Keter = nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
+    modules = [
+      { networking.hostName = "Keter"; }
+      { environment.defaultPackages = []; }
+
+      ./Keter
+    ] ++ builtins.concatLists [ shared home ];
+
+    specialArgs = sharedArgs;
+  };
 }

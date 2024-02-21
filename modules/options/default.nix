@@ -70,6 +70,9 @@
 
       gaming.gamemode.enable =
         lib.mkEnableOption "Enable 'gamemode'";
+
+      jellyfin.enable =
+        lib.mkEnableOption "Enable 'jellyfin' server service";
     };
   };
 }
