@@ -24,7 +24,7 @@ in {
       ls = "${pkgs.eza}/bin/eza -l --color=always --group-directories-first --icons";
       la = "${pkgs.eza}/bin/eza -al --color=always --group-directories-first --icons";
       cat = "${pkgs.bat}/bin/bat --style header --style snip --style changes --style header";
-      grep = "${pkgs.ripgrep}/bin/ripgrep";
+      grep = "${pkgs.ripgrep}/bin/rg";
       mv = "mv -iv";
       rm = "rm -iv";
 

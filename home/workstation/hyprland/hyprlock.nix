@@ -30,7 +30,7 @@
     backgrounds =  [
       {
         monitor = "eDP-1";
-        path = "/home/heartblin/Pictures/HyprChan.png";
+        path = "/etc/nixos/home/workstation/hyprland/images/lockscreen.png";
         color = "rgba(25, 25, 25, 1.0)";
       }
     ];

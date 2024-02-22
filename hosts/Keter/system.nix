@@ -32,6 +32,7 @@
       gaming.gamemode.enable = false;
 
       jellyfin.enable = true;
+      vscodeServer.enable = true;
     };
   };
 }

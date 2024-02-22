@@ -30,6 +30,9 @@
 
       gaming.steam.enable = true;
       gaming.gamemode.enable = true;
+
+      jellyfin.enable = false;
+      vscodeServer.enable = false;
     };
   };
 }

@@ -41,7 +41,7 @@ in {
       powerManagement.finegrained = false;
       dynamicBoost.enable = true;
       open = false;
-      nvidiaSettings = true;
+      nvidiaSettings = false; # Does fuck all on Wayland
       nvidiaPersistenced = true;
       forceFullCompositionPipeline = true;
 

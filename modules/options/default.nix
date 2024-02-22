@@ -73,6 +73,9 @@
 
       jellyfin.enable =
         lib.mkEnableOption "Enable 'jellyfin' server service";
+
+      vscodeServer.enable =
+        lib.mkEnableOption "Enable 'vscode' server service";
     };
   };
 }

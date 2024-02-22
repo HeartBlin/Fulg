@@ -26,7 +26,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
     hypridle.url = "github:hyprwm/hypridle";
-    hyprlock.url = "github:hyprwm/hyprlock";
+    hyprlock.url = "github:hyprwm/hyprlock/59997a7c380d34e9aba1e8eb18f8425dd7de13ab";
 
     # Manage '/home'
     homeManager.url = "github:nix-community/home-manager";
@@ -48,6 +48,9 @@
 
     # 'command-not-found' replacement
     nix-index.url = "github:nix-community/nix-index";
+
+    # Host a VSCode server
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
   outputs = { nixpkgs, ... }@inputs: {

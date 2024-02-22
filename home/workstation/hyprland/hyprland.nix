@@ -19,12 +19,18 @@ in {
       "$MOD" = "SUPER";
 
       env = [
-        "LIBVA_DRIVER_NAME,nvidia"
         "XDG_SESSION_TYPE,wayland"
+        #"WLR_NO_HARDWARE_CURSORS,1"
+        "WLR_DRM_NO_ATOMIC,1" # REMOVE AFTER ker > 6.8 !
+
+        "WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
+
+        # NVIDIA specific
+        "__GL_GSYNC_ALLOWED,1"
+        "LIBVA_DRIVER_NAME,nvidia"
+        "__GL_VRR_ALLOWED,0"
         #"GBM_BACKEND,nvidia-drm"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-        #"WLR_NO_HARDWARE_CURSORS,1"
-        "WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
       ];
 
       monitor = [
@@ -58,6 +64,7 @@ in {
         "col.inactive_border" = "rgb(2F2F2F)";
 
         layout = "dwindle";
+        allow_tearing = true;
       };
 
       dwindle = {
@@ -227,6 +234,9 @@ in {
         "float, title:^(Open Folder)(.*)$"
         "float, title:^(Save As)(.*)$"
         "float, title:^(Library)(.*)$ "
+
+        # Tearing
+        "immediate, class:^(cs2)$"
       ];
     };
   };
