@@ -63,4 +63,7 @@
       systemd-resolved.stopIfChanged = lib.mkForce false;
     };
   };
+
+  # WOL
+  networking.interfaces."eno1".wakeOnLan.enable = true;
 }

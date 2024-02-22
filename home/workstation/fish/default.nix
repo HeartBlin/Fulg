@@ -44,6 +44,15 @@ in {
 
       # systemd
       errors = "journalctl -p 3 -xb";
+
+      # Send dotfiles to server
+      dotsSync = "tailscale status > /dev/null 2>&1 && rsync -aPv -e \"ssh -i ~/.ssh/Keter\" /etc/nixos/* server@keter:/etc/nixos/";
+
+      # Fast auth to tailscale
+      tailUp = "sudo tailscale up --authkey $(cat /etc/secrets/tailscale)";
+
+      # Wake up server
+      wakeUp = "${pkgs.wakeonlan}/bin/wakeonlan $(cat /etc/secrets/server-mac)";
     };
 
     functions = {

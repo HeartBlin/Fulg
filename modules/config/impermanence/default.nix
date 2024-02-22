@@ -37,6 +37,7 @@ in {
         "/etc/nix/"
         "/etc/NetworkManager/system-connections"
         "/etc/secureboot"
+        "/etc/secrets"
         "/var/db/sudo"
         "/var/lib/libvirt"
         "/var/lib/bluetooth"
