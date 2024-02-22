@@ -1,4 +1,4 @@
-{ config, lib, ... }: let
+{ config, lib, pkgs, ... }: let
   role = config.role;
 in {
   config = lib.mkIf ( role == "server" ) {
@@ -7,5 +7,9 @@ in {
       settings.PasswordAuthentication = false;
       settings.KbdInteractiveAuthentication = false;
     };
+
+    environment.systemPackages = [
+      pkgs.rsync
+    ];
   };
 }

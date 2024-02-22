@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }: let
+{ config, inputs, lib, pkgs, ... }: let
   role = config.role;
   cfg = config.programs.vscodeServer;
 in {
@@ -19,5 +19,7 @@ in {
     ];
 
     services.vscode-server.enable = true;
+    services.vscode-server.enableFHS = true;
+    services.vscode-server.nodejsPackage = pkgs.nodejs_21;
   };
 }

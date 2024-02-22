@@ -58,5 +58,6 @@ in {
     (pkgs.nerdfonts.override {
       fonts = [ "FiraCode" ];
     })
+    pkgs.rsync
   ];
 }
